@@ -3,9 +3,9 @@
   "dns": {
     "hosts": {
       "doh.pub": [ "1.12.12.12", "120.53.53.53" ],
-      "dns.alidns.com": [ "223.5.5.5", "223.6.6.6", ],
-      "dns.google": [ "8.8.8.8", "8.8.4.4", ],
-      "cloudflare-dns.com": [ "1.1.1.1", "1.0.0.1", ]
+      "dns.alidns.com": [ "223.5.5.5", "223.6.6.6" ],
+      "dns.google": [ "8.8.8.8", "8.8.4.4" ],
+      "cloudflare-dns.com": [ "1.1.1.1", "1.0.0.1" ]
     },
     "servers": [
       { "tag": "dns_block", "address": "rcode://success" },
@@ -31,7 +31,6 @@
     "fakeip": { "enabled": true, "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18", "exclude_rule": { "rule_set": [ "fakeip-filter", "private" ] } }
   },
   "inbounds": [
-    // 启动服务时如果出现 `tun-in` 报错，可将 `"stack": "mixed"` 修改为 `"stack": "system"`
     { "tag": "tun-in", "type": "tun", "interface_name": "sing-box", "inet4_address": "172.19.0.1/30", "inet6_address": "fdfe:dcba:9876::1/126", "auto_route": true, "strict_route": true, "stack": "mixed", "sniff": true }
   ],
   "outbounds": [
@@ -66,7 +65,6 @@
     {
       "tag": "🛫 夜煞云",
       "type": "remote",
-      // 修改为你的 Clash 订阅链接
       "download_url": "https://substore.18306866.xyz/wke9yjndyemrwWJV/download/collection/%E5%A4%9C%E7%85%9E%E4%BA%91_Hysteria2?target=Clash",
       "path": "./airport.yaml",
       "download_interval": "24h",
